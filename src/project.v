@@ -20,8 +20,10 @@ module tt_um_gonsolo_pepe (
   assign uio_out = 0;
   assign uio_oe  = 0;
 
-  wire [31:0] a = 32'h40000000; // 2.0
-  wire [31:0] b = 32'h40000000; // 2.0
+  //wire [31:0] a = 32'h40000000; // 2.0
+  wire [31:0] a = { ui_in, 24'h000000 }; // 2.0, first 8 bits from test.py
+  //wire [31:0] b = 32'h40000000; // 2.0
+  wire [31:0] b = { uio_in, 24'h000000 }; // 2.0, ditto
   wire out_valid;
   wire [31:0] out;
   // out should be 32'h40800000

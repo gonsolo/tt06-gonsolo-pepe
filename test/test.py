@@ -24,9 +24,8 @@ async def test_multiply(dut):
 
   # Set the input values, wait one clock cycle, and check the output
   dut._log.info("Test")
-  dut.ui_in.value = 20
-  dut.uio_in.value = 30
-
-  await ClockCycles(dut.clk, 1)
-
+  dut.ui_in.value = 0x40
+  dut.uio_in.value = 0x40
+  await ClockCycles(dut.clk, 3)
   assert dut.uo_out.value == 0x40
+  await ClockCycles(dut.clk, 1)
