@@ -1,19 +1,16 @@
-# Tiny Tapeout project information
 project:
-  title:        "TT-Pepe"      # Project title
-  author:       "gonsolo"      # Your name
+  title:        "TinyTapeout Pepe"
+  author:       "Gonsolo"
   discord:      ""      # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
-  description:  "Test TT"      # One line description of what your project does
-  language:     "Verilog" # other examples include SystemVerilog, Amaranth, VHDL, etc
+  description:  "Multiply two values"      # One line description of what your project does
+  language:     "Verilog & Chisel"
   clock_hz:     0       # Clock frequency in Hz (or 0 if not applicable)
 
   # How many tiles your design occupies? A single tile is about 167x108 uM.
   tiles: "1x1"          # Valid values: 1x1, 1x2, 2x2, 3x2, 4x2, 6x2 or 8x2
 
-  # Your top module name must start with "tt_um_". Make it unique by including your github username:
   top_module:  "tt_um_gonsolo_pepe"
   
-  # List your project's source files here. Source files must be in ./src and you must list each source file separately, one per line:
   source_files:        
     - "project.v"
     - "Diffuse.v"
@@ -21,34 +18,35 @@ project:
 # The pinout of your project. Leave unused pins blank. DO NOT delete or add any pins.
 pinout:
   # Inputs
-  ui[0]: ""
-  ui[1]: ""
-  ui[2]: ""
-  ui[3]: ""
-  ui[4]: ""
-  ui[5]: ""
-  ui[6]: ""
-  ui[7]: ""
+  ui[0]: "First   bit of 32 bit float input summand (a)"
+  ui[1]: "Second  bit of 32 bit float input summand (a)"
+  ui[2]: "Third   bit of 32 bit float input summand (a)"
+  ui[3]: "Fourth  bit of 32 bit float input summand (a)"
+  ui[4]: "Fifth   bit of 32 bit float input summand (a)"
+  ui[5]: "Sixth   bit of 32 bit float input summand (a)"
+  ui[6]: "Seventh bit of 32 bit float input summand (a)"
+  ui[7]: "Eighth  bit of 32 bit float input summand (a)"
 
   # Outputs
-  uo[0]: ""
-  uo[1]: ""
-  uo[2]: ""
-  uo[3]: ""
-  uo[4]: ""
-  uo[5]: ""
-  uo[6]: ""
-  uo[7]: ""
+  uo[0]: "First   bit of 32 bit float output"
+  uo[1]: "Second  bit of 32 bit float output"
+  uo[2]: "Third   bit of 32 bit float output"
+  uo[3]: "Fourth  bit of 32 bit float output"
+  uo[4]: "Fifth   bit of 32 bit float output"
+  uo[5]: "Sixth   bit of 32 bit float output"
+  uo[6]: "Seventh bit of 32 bit float output"
+  uo[7]: "Eighth  bit of 32 bit float output"
 
   # Bidirectional pins
-  uio[0]: ""
-  uio[1]: ""
-  uio[2]: ""
-  uio[3]: ""
-  uio[4]: ""
-  uio[5]: ""
-  uio[6]: ""
-  uio[7]: ""
+  uio[0]: "Input: First   bit of 32 bit float input summand (b), output: Output valid"
+  uio[1]: "Second  bit of 32 bit float input summand (b)"
+  uio[2]: "Third   bit of 32 bit float input summand (b)"
+  uio[3]: "Fourth  bit of 32 bit float input summand (b)"
+  uio[4]: "Fifth   bit of 32 bit float input summand (b)"
+  uio[5]: "Sixth   bit of 32 bit float input summand (b)"
+  uio[6]: "Seventh bit of 32 bit float input summand (b)"
+  uio[7]: "Eighth  bit of 32 bit float input summand (b)"
+
 
 # Do not change!
 yaml_version: 6

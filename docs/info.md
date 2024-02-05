@@ -9,11 +9,12 @@ You can also include images in this folder and reference them in the markdown. E
 
 ## How it works
 
-For now, just test the template add.
+It multiplies two float values. Currently only the first byte of two input summands are read, the rest is fixed.
+Then the first byte of the output is written.
 
 ## How to test
 
-For now, not at all.
+The cocotb test writes two values, waits for the output valid bit and checks the result.
 
 ## External hardware
 
