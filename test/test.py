@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: © 2023 Uri Shaked <uri@tinytapeout.com>
+# SPDX-FileCopyrightText: © 2024 Gonsolo
 # SPDX-License-Identifier: MIT
 
 import cocotb
@@ -6,7 +6,7 @@ from cocotb.clock import Clock
 from cocotb.triggers import ClockCycles
 
 @cocotb.test()
-async def test_adder(dut):
+async def test_multiply(dut):
   dut._log.info("Start")
   
   # Our example module doesn't use clock and reset, but we show how to use them here anyway.
@@ -29,4 +29,4 @@ async def test_adder(dut):
 
   await ClockCycles(dut.clk, 1)
 
-  assert dut.uo_out.value == 50
+  assert dut.uo_out.value == 0x40

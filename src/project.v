@@ -16,16 +16,33 @@ module tt_um_gonsolo_pepe (
     input  wire       rst_n
 );
 
-  // All output pins must be assigned. If not used, assign to 0.
-  assign uo_out  = ui_in + uio_in;  // Example: ou_out is the sum of ui_in and uio_in
+
   assign uio_out = 0;
   assign uio_oe  = 0;
 
-   wire _unused_ok = &{
+  wire [31:0] a = 32'h40000000; // 2.0
+  wire [31:0] b = 32'h40000000; // 2.0
+  wire out_valid;
+  wire [31:0] out;
+  // out should be 32'h40800000
+  assign uo_out = out[31:24];
+  // uo_out should be 8'h40
+
+  wire _unused_ok = &{
           1'b0,
 	  ena,
 	  clk,
 	  rst_n,
+	  out,
           1'b0};
+
+  Multiply multiply(
+	.clock(clk),
+	.reset(~rst_n),
+	.io_a_bits(a),
+	.io_b_bits(b),
+	.io_out_valid(out_valid),
+	.io_out_bits(out)
+	);
 
 endmodule
