@@ -16,16 +16,17 @@ module tt_um_gonsolo_pepe (
     input  wire       rst_n
 );
 
-
-  assign uio_out = 0;
-  assign uio_oe  = 0;
+  assign uio_out = { out_valid, 7'b0000000 };
+  assign uio_oe  = 8'b10000000;
 
   //wire [31:0] a = 32'h40000000; // 2.0
   wire [31:0] a = { ui_in, 24'h000000 }; // 2.0, first 8 bits from test.py
   //wire [31:0] b = 32'h40000000; // 2.0
   wire [31:0] b = { uio_in, 24'h000000 }; // 2.0, ditto
+
   wire out_valid;
   wire [31:0] out;
+
   // out should be 32'h40800000
   assign uo_out = out[31:24];
   // uo_out should be 8'h40
