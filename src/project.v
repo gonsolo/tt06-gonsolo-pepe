@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2023 Your Name
+ * Copyright (c) 2023 Gonsolo
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -20,5 +20,12 @@ module tt_um_gonsolo_pepe (
   assign uo_out  = ui_in + uio_in;  // Example: ou_out is the sum of ui_in and uio_in
   assign uio_out = 0;
   assign uio_oe  = 0;
+
+   wire _unused_ok = &{
+          1'b0,
+	  ena,
+	  clk,
+	  rst_n,
+          1'b0};
 
 endmodule
